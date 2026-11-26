@@ -13,9 +13,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
-<meta name="theme-color" content="#0b2e22"><rect width='64' height='64' rx='14' fill='%230b2e22'/><text x='32' y='43' font-size='30' text-anchor='middle' fill='%23c6a66a' font-family='Georgia'>MG</text></svg>">
+<meta name="theme-color" content="#0b2e22">
 <script>document.documentElement.classList.add('js')</script>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
@@ -66,7 +67,8 @@ header.solid{background:linear-gradient(90deg,rgba(3,17,12,.97),rgba(11,46,34,.9
 
 /* hero */
 .hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;color:#fff;padding:110px 0 48px}
-.hero-slides{position:absolute;inset:0;overflow:hidden;background:#04140e}
+.hero{background:#04140e url(img/hero.jpg) center/cover no-repeat}
+.hero-slides{position:absolute;inset:0;overflow:hidden;background:url(img/hero.jpg) center/cover no-repeat}
 .slide{position:absolute;inset:-2%;background-size:cover;background-position:center;opacity:0;animation:slideShow 28s infinite}
 .slide:nth-child(1){animation-delay:0s;opacity:1}
 .slide:nth-child(2){animation-delay:7s}
@@ -389,10 +391,10 @@ footer .fine{margin-top:10px;font-size:10.5px;color:rgba(255,255,255,.38);line-h
 
     ym(114706250, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/114706250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
+<noscript><div><img src="https://mc.yandex.ru/watch/114706250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 <header id="top">
   <div class="wrap nav">
@@ -798,7 +800,7 @@ footer .fine{margin-top:10px;font-size:10.5px;color:rgba(255,255,255,.38);line-h
       <a href="#contact" class="btn dark" style="margin-top:34px">Записаться на показ</a>
     </div>
     <div class="phone-frame reveal">
-      <video src="video/showroom.mp4" poster="img/showroom-poster.jpg" controls playsinline muted loop preload="none"></video>
+      <video src="video/showroom.mp4" poster="img/showroom-poster.jpg" autoplay muted loop playsinline preload="metadata" controls></video>
     </div>
   </div>
 </section>
