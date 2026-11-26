@@ -47,11 +47,13 @@ h3{font-size:26px;color:var(--green)}
 /* header */
 header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s;color:#fff}
 header.solid{background:linear-gradient(90deg,rgba(3,17,12,.97),rgba(11,46,34,.95));border-bottom:1px solid rgba(198,166,106,.25);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.15)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
-.logo{font-family:var(--serif);font-size:22px;letter-spacing:.2em;line-height:1;text-transform:uppercase}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:26px}
+.logo{font-family:var(--serif);font-size:20px;letter-spacing:.16em;line-height:1;text-transform:uppercase}
 .logo small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.42em;color:var(--gold);margin-top:6px}
 .menu{display:flex;gap:30px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.menu a{opacity:.85}.menu a:hover{opacity:1;color:var(--gold)}
+.menu a{opacity:.85;white-space:nowrap}
+.logo{white-space:nowrap}
+.menu a:hover{opacity:1;color:var(--gold)}
 .nav-cta{display:flex;align-items:center;gap:18px}
 .nav-cta .phone{font-size:14px;letter-spacing:.04em;white-space:nowrap}
 .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
@@ -216,7 +218,8 @@ header.solid{background:linear-gradient(90deg,rgba(3,17,12,.97),rgba(11,46,34,.9
 .cbtn .ci{flex:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-size:12px;font-weight:600}
 .cbtn small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
 .cbtn b{font-weight:500;font-size:17px;white-space:nowrap}
-.doc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px}
+.doc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.doc-group{font-size:24px;margin-top:46px}
 .doc{display:flex;align-items:center;gap:20px;background:#fff;border:1px solid var(--line);padding:22px 24px;transition:.25s}
 .doc:hover{border-color:var(--gold);box-shadow:0 14px 30px -20px rgba(15,63,41,.4)}
 .doc-ic{flex:none;width:52px;height:62px;border:1px solid var(--gold);color:var(--gold-d);display:grid;place-items:center;font-size:11px;font-weight:600;letter-spacing:.1em}
@@ -249,6 +252,14 @@ footer .fine{margin-top:10px;font-size:10.5px;color:rgba(255,255,255,.38);line-h
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1s}
 .reveal.in{opacity:1;transform:none}
 
+.nav-cta .btn{display:none}
+.menu{gap:22px;font-size:11px;letter-spacing:.1em}
+@media(min-width:1500px){.menu{gap:28px;font-size:12px}}
+@media(max-width:1260px){
+  .menu{display:none}
+  .menu.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:var(--grad);padding:24px;gap:18px}
+  .burger{display:block}
+}
 @media(max-width:1020px){
   .menu{display:none}
   .menu.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:var(--grad);padding:24px;gap:18px}
@@ -615,14 +626,30 @@ footer .fine{margin-top:10px;font-size:10.5px;color:rgba(255,255,255,.38);line-h
     <div class="eyebrow">Документы</div>
     <h2>Проектная документация</h2>
     <p class="lead">Застройщик — АО «СЗ «Солнечный луч». Проект строится по 214-ФЗ (договор долевого участия), финансирование через Банк ДОМ.РФ.</p>
+    <h3 class="doc-group">Разрешительная документация</h3>
     <div class="doc-grid">
-      <a class="doc" href="docs/project-declaration-23-003209.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Проектная декларация</b><small>№ 23-003209 от 22.07.2026 · 0,4 МБ</small></span></a>
-      <a class="doc" href="docs/building-permit-23-49-8566-2025.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Разрешение на строительство</b><small>№ 23-49-8566-2025 от 14.02.2025 · 1,6 МБ</small></span></a>
-      <a class="doc" href="docs/gpzu-RF-23-2-09-0-00-2024-6269.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Градостроительный план земельного участка</b><small>№ РФ-23-2-09-0-00-2024-6269 · 16 МБ</small></span></a>
-      <a class="doc" href="docs/spozu-situation-plan.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Схема планировочной организации земельного участка</b><small>Ситуационный план, 6 листов · 16 МБ</small></span></a>
-      <a class="doc" href="docs/ddu-template.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Договор долевого участия</b><small>Типовая форма · 0,4 МБ</small></span></a>
-      <a class="doc" href="docs/ddu-template-with-rent.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Договор долевого участия с арендой номера</b><small>Типовая форма для передачи в управление оператору · 0,4 МБ</small></span></a>
+      <a class="doc" href="docs/project-declaration.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Проектная декларация</b><small>№ 23-003209 от 10.11.2026 · 0,4 МБ</small></span></a>
+      <a class="doc" href="docs/building-permit-2025-02-14.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Разрешение на строительство</b><small>№ 23-49-8566-2025 от 14.02.2025 · 1,7 МБ</small></span></a>
+      <a class="doc" href="docs/building-permit-changes-2025-07-22.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Разрешение на строительство (с изменениями)</b><small>№ 23-49-8566-2025, изменения от 22.07.2025 · 1,6 МБ</small></span></a>
+      <a class="doc" href="docs/notice-start-construction.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Извещение о начале строительства</b><small>Гостиничный комплекс «Солнечный луч» · 0,3 МБ</small></span></a>
+      <a class="doc" href="docs/gpzu.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Градостроительный план земельного участка</b><small>№ РФ-23-2-09-0-00-2024-6269 · 3,9 МБ</small></span></a>
+      <a class="doc" href="docs/site-plan-spozu.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Схема планировочной организации земельного участка</b><small>Ситуационный план, 6 листов · 9,4 МБ</small></span></a>
     </div>
+    <h3 class="doc-group">Заключения негосударственной экспертизы</h3>
+    <div class="doc-grid">
+      <a class="doc" href="docs/expertise-071552-2024.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Положительное заключение № 23-2-1-3-071552-2024</b><small>от 28.11.2024 · проектная документация и инженерные изыскания · 0,4 МБ</small></span></a>
+      <a class="doc" href="docs/expertise-000714-2025.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Положительное заключение № 23-2-1-2-000714-2025</b><small>от 15.01.2025 · проектная документация · 0,3 МБ</small></span></a>
+      <a class="doc" href="docs/expertise-031198-2025.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Положительное заключение № 23-2-1-2-031198-2025</b><small>от 05.06.2025 · проектная документация · 0,4 МБ</small></span></a>
+      <a class="doc" href="docs/expertise-050434-2025.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Положительное заключение № 23-2-1-2-050434-2025</b><small>от 27.08.2025 · проектная документация · 0,5 МБ</small></span></a>
+    </div>
+    <h3 class="doc-group">Договор и отчётность застройщика</h3>
+    <div class="doc-grid">
+      <a class="doc" href="docs/ddu-project.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Проект договора долевого участия</b><small>Типовая форма застройщика · 0,4 МБ</small></span></a>
+      <a class="doc" href="docs/financial-2026-q1.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Бухгалтерская отчётность</b><small>1 квартал 2026 · 0,1 МБ</small></span></a>
+      <a class="doc" href="docs/financial-2026-h1.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Бухгалтерская отчётность</b><small>1 полугодие 2026 · 2,6 МБ</small></span></a>
+      <a class="doc" href="docs/financial-2026-9m.pdf" target="_blank" rel="noopener"><span class="doc-ic">PDF</span><span><b>Бухгалтерская отчётность</b><small>9 месяцев 2026 · 1,2 МБ</small></span></a>
+    </div>
+    <p class="note" style="margin-top:26px">Документы опубликованы застройщиком в Единой информационной системе жилищного строительства — <a href="https://xn--80az8a.xn--d1aqf.xn--p1ai/%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3-%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA/%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82/67693" target="_blank" rel="noopener" style="color:var(--gold-d);text-decoration:underline">наш.дом.рф, объект № 67693</a>.</p>
   </div>
 </section>
 
@@ -659,7 +686,7 @@ footer .fine{margin-top:10px;font-size:10.5px;color:rgba(255,255,255,.38);line-h
       <div><a class="js-phone" href="#" style="color:#fff">+7 920 660-88-45</a></div>
     </div>
     <p>Информация на сайте носит справочный характер и не является публичной офертой, определяемой положениями ст. 437 ГК РФ. Изображения являются визуализациями проекта. Прогнозы доходности не являются гарантией дохода.</p>
-    <p style="margin-top:10px">Застройщик АО «СЗ «Солнечный луч». Проектная декларация размещена на сайте <a href="https://xn--80az8a.xn--d1aqf.xn--p1ai/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">наш.дом.рф</a> и в разделе <a href="#docs" style="color:#fff;text-decoration:underline">«Документы»</a>.</p>
+    <p style="margin-top:10px">Застройщик АО «СЗ «Солнечный луч». Проектная декларация размещена на сайте <a href="https://xn--80az8a.xn--d1aqf.xn--p1ai/%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3-%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA/%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82/67693" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">наш.дом.рф</a> и в разделе <a href="#docs" style="color:#fff;text-decoration:underline">«Документы»</a>.</p>
     <p class="fine">Сайт является информационным ресурсом официального партнёра по продажам и не является сайтом застройщика.</p>
     <p style="margin-top:14px">© <span id="y"></span> мандарингарденсочи.com</p>
   </div>
